@@ -8,13 +8,13 @@ class Input extends Component {
         }
     }
     render() {
-        console.log(this.props.onChange)
+        
         return (
             <div>
                 <label htmlFor="fruit-filter">Filter these fruits</label>
                 <input type="text"
                     value={this.props.value}
-                    handleFilter={this.props.handleFilter}
+                    onChange={this.props.handleFilter}
                     name="fruit-filter" />
             </div>
         )

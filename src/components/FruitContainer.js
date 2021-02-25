@@ -10,10 +10,10 @@ class FruitContainer extends Component {
             filterValue: ''
         };
     }
-    handleFilter(e) {
+    handleFilter =(e) => {
         e.preventDefault();
         let filteredValue = e.target.value;
-        const fruitFilterList = this.props.fruitsToDisplay.filter(FruitItem => {
+        const fruitFilterList = this.props.fruits.filter(FruitItem => {
             if (FruitItem.includes(filteredValue.toLowerCase())) {
                 return true;
             }
@@ -32,7 +32,7 @@ class FruitContainer extends Component {
         console.log(this.props.fruits)
         return (
             <div>
-                <Input value={this.state.filterValue} onChange={this.state.handleFilter} />
+                <Input value={this.state.filterValue} handleFilter={this.handleFilter} />
                 <List fruitsToDisplay={this.state.fruitsToDisplay} />
             </div>
         )

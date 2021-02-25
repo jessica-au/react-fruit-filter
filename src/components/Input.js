@@ -1,20 +1,21 @@
-import React, { Component} from 'react' 
+import React, { Component } from 'react';
 
-class input extends Component {
+class Input extends Component {
     constructor(props) {
         super()
-        this.state= {
+        this.state = {
 
         }
     }
     render() {
-        return(
+        console.log(this.props.onChange)
+        return (
             <div>
                 <label htmlFor="fruit-filter">Filter these fruits</label>
                 <input type="text"
-                value={this.props.value} 
-                onChange={this.props.onChange}
-                name="fruit-filter"/>
+                    value={this.props.value}
+                    handleFilter={this.props.handleFilter}
+                    name="fruit-filter" />
             </div>
         )
     }
